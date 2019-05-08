@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vendingmachine;
+package finalproject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,8 +71,22 @@ public class ComboMachine {
         System.out.println("Your balance is " + Balance);
         System.out.println("Select Item: \n");
         System.out.println("COKE: Cola(1 dollar)");
-        System.out.println("CHIPS: Chips(50)");
-        System.out.println("CANDY: Candy(65)");
+        System.out.println("SPRITE: Sprite(1 dollar)");
+        System.out.println("DR.PEPPER: Dr.Pepper(1 dollar)");
+        System.out.println("FANTA: Fanta(1 dollar)");
+        System.out.println("PIBB: Pibb(1 dollar)");
+        System.out.println("LEMONADE: Minute Maid(1 dollar)");
+        System.out.println("ROOTBEER: A&W Root Beer(1 dollar)");
+        System.out.println("CRUSH: Crush(1 dollar)");
+        System.out.println("TRISCUITS: TRISCUITS(50 CENTS)");
+        System.out.println("GUSHERS: GUSHERS(65)");
+        System.out.println("SNICKERS: SNICKERS(65 CENTS)");
+        System.out.println("SNYDER: SNYDER(50 CENTS)");
+        System.out.println("LIFESAVERS: LIFESAVERS(65 CENTS)");
+        System.out.println("SKITTLES: SKITTLES(65 CENTS)");
+        System.out.println("SUNCHIPS: SUNCHIPS(50 CENTS)");
+        System.out.println("RICEKRISPIES: RICEKRISPIES(50 CENTS)");
+        System.out.println("LAYS: LAYS(50 CENTS)");
         System.out.println("RETURN");
         System.out.println("CANCEL");
         return (sc.nextLine());

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vendingmachine;
+package finalproject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,8 @@ class VendingMachine
 
        // initiateInventory(); // initiate with items and coins storage in the vending machine
 
-        Scanner sc = new Scanner(System.in);
+        @SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
         System.out.println("Vending Machine\n");
         System.out.println("SELECT AN OPTION");
         System.out.println("1. View Current Machines");
@@ -36,12 +37,13 @@ class VendingMachine
         
         }else if(select == 3){
             SodaMachine.main(args);
+        } else {
+            System.out.println("Wrong Input TRY AGAIN");
         }
       /*  
         while (Balance == 0) {
             inputCoins(sc, VM); // input coins
         }
-
         String sample = selectItems(sc, VM); // select items
         int checkVendCond = 0;
         if (!itemInventory.containsKey(sample)) { // for return and cancel case
@@ -59,7 +61,6 @@ class VendingMachine
                     System.out.println("Sold Out, Please insert coins and buy the items");
                     VendingMachine.main(null);
                 } else if (itemInventory.get(sample) == 1 || itemInventory.get(sample) == -1) {
-
                 } else {
                     itemInventory.put(sample, itemInventory.get(sample) - 1);
                     Balance = checkVendCond;
@@ -68,9 +69,7 @@ class VendingMachine
                 itemInventory.put(sample, itemInventory.get(sample) - 1);
                 Balance = checkVendCond;
             }
-
         }
-
         sc.close(); */
    }
 /*
@@ -80,7 +79,6 @@ class VendingMachine
         String coins = sc.nextLine();
         Balance = VM.drop(coins, Balance);
     }
-
     //selection of items
     public static String selectItems(Scanner sc, VendingExample VM) {
         System.out.println("Your balance is " + Balance);
@@ -92,7 +90,6 @@ class VendingMachine
         System.out.println("CANCEL");
         return (sc.nextLine());
     }
-
     //initiate coins and items storage in vending machine
     public static void initiateInventory() {
         for (Item i : Item.values()) {
@@ -102,11 +99,8 @@ class VendingMachine
             coinInventory.put(i.getName(), 5);
         }
     }
-
     public static void changeBalance(int balance) {
-
     }
               
     */          
 }
-
