@@ -61,7 +61,7 @@ public class ComboMachine {
 
     // insertion of coins
     public static void inputCoins(Scanner sc, VendingExample VM) {
-        System.out.println("Insert coins in the form of: NICKLE, DIME, QUARTER and DOLLAR");
+        System.out.println("Insert coins in the form of: NICKEL, DIME, QUARTER and DOLLAR");
         String coins = sc.nextLine();
         Balance = VM.drop(coins, Balance);
     }

@@ -21,7 +21,6 @@ class SodaMachine {
         initiateInventory(); // initiate with items and coins storage in the vending machine
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("\t\t\tVending Machine.");
 
         while (Balance == 0) {
             inputCoins(sc, VM); // input coins
@@ -61,7 +60,7 @@ class SodaMachine {
 
     // insertion of coins
     public static void inputCoins(Scanner sc, VendingExample VM) {
-        System.out.println("Insert coins in the form of: NICKLE, DIME, QUARTER and DOLLAR");
+        System.out.println("\nInsert coins in the form of: NICKEL, DIME, QUARTER and DOLLAR");
         String coins = sc.nextLine();
         Balance = VM.drop(coins, Balance);
     }
@@ -71,8 +70,13 @@ class SodaMachine {
         System.out.println("Your balance is " + Balance);
         System.out.println("Select Item: \n");
         System.out.println("COKE: Cola(1 dollar)");
-        System.out.println("CHIPS: Chips(50)");
-        System.out.println("CANDY: Candy(65)");
+        System.out.println("SPRITE: Sprite(1 dollar)");
+        System.out.println("DR.PEPPER: Dr.Pepper(1 dollar)");
+        System.out.println("FANTA: Fanta(1 dollar)");
+        System.out.println("PIBB: Pibb(1 dollar)");
+        System.out.println("LEMONADE: Minute Maid(1 dollar)");
+        System.out.println("ROOTBEER: A&W Root Beer(1 dollar)");
+        System.out.println("CRUSH: Crush(1 dollar)");
         System.out.println("RETURN");
         System.out.println("CANCEL");
         return (sc.nextLine());

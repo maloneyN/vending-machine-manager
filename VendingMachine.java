@@ -18,7 +18,7 @@ class VendingMachine
 
     public static void main(String args[]) {
 
-        initiateInventory(); // initiate with items and coins storage in the vending machine
+       // initiateInventory(); // initiate with items and coins storage in the vending machine
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Vending Machine\n");
@@ -26,7 +26,18 @@ class VendingMachine
         System.out.println("1. View Current Machines");
         System.out.println("2. Add New Machine");
         System.out.println("3. Test Machines");
+        System.out.print("Your choice: ");
         
+        int select = sc.nextInt();
+        
+        if(select == 1){
+        
+        }else if(select == 2){
+        
+        }else if(select == 3){
+            SodaMachine.main(args);
+        }
+      /*  
         while (Balance == 0) {
             inputCoins(sc, VM); // input coins
         }
@@ -60,12 +71,12 @@ class VendingMachine
 
         }
 
-        sc.close();
-    }
-
+        sc.close(); */
+   }
+/*
     // insertion of coins
     public static void inputCoins(Scanner sc, VendingExample VM) {
-        System.out.println("Insert coins in the form of: NICKLE, DIME, QUARTER and DOLLAR");
+        System.out.println("Insert coins in the form of: NICKEL, DIME, QUARTER and DOLLAR");
         String coins = sc.nextLine();
         Balance = VM.drop(coins, Balance);
     }
@@ -95,5 +106,7 @@ class VendingMachine
     public static void changeBalance(int balance) {
 
     }
+              
+    */          
 }
 
