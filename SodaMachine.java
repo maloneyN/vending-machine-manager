@@ -16,6 +16,8 @@ class SodaMachine {
     private static Map<String, Integer> coinInventory = new HashMap<String, Integer>(); //hashmap for coins and its numbers
     private static VendingExample VM = new VendingExample();
 
+    
+
     public static void main(String args[]) {
 
         initiateInventory(); // initiate with items and coins storage in the vending machine

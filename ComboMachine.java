@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ComboMachine {
 
-    private static int Balance = 0; //stores total balance
+    private static int Balance = 0; //stores balance
     private static Map<String, Integer> itemInventory = new HashMap<String, Integer>(); //hashmap for items and its numbers
     private static Map<String, Integer> coinInventory = new HashMap<String, Integer>(); //hashmap for coins and its numbers
     private static VendingExample VM = new VendingExample();

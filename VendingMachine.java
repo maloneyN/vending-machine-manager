@@ -21,7 +21,7 @@ class VendingMachine
        // initiateInventory(); // initiate with items and coins storage in the vending machine
 
         @SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
+		Scanner user_input = new Scanner(System.in);
         System.out.println("Vending Machine\n");
         System.out.println("SELECT AN OPTION");
         System.out.println("1. View Current Machines");
@@ -29,7 +29,7 @@ class VendingMachine
         System.out.println("3. Test Machines");
         System.out.print("Your choice: ");
         
-        int select = sc.nextInt();
+        int select = user_input.nextInt();
         
         if(select == 1){
         
