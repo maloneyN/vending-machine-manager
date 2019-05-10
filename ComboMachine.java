@@ -1,5 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 //author Massimo Boffa and Nigel Maloney
-package finalproject;
+package vendingmachine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,19 +17,20 @@ public class ComboMachine {
     private static Map<String, Integer> itemInventory = new HashMap<String, Integer>(); //hashmap for items and its numbers
     private static Map<String, Integer> coinInventory = new HashMap<String, Integer>(); //hashmap for coins and its numbers
     private static VendingExample VM = new VendingExample();
-
+    public int vendID = 3;
+    
     public static void main(String args[]) {
 
         initiateInventory(); // initiate with items and coins storage in the vending machine
 
-        Scanner user_input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("\t\t\tVending Machine.");
 
         while (Balance == 0) {
-            inputCoins(user_input, VM); // input coins
+            inputCoins(sc, VM); // input coins
         }
 
-        String sample = selectItems(user_input, VM); // select items
+        String sample = selectItems(sc, VM); // select items
         int checkVendCond = 0;
         if (!itemInventory.containsKey(sample)) { // for return and cancel case
             checkVendCond = VM.choose(sample, Balance);
@@ -34,8 +41,8 @@ public class ComboMachine {
             checkVendCond = VM.choose(sample, Balance);
             if (checkVendCond == 2) {
                 System.out.println("Insert More Coins");
-                inputCoins(user_input, VM);
-                sample = selectItems(user_input, VM);
+                inputCoins(sc, VM);
+                sample = selectItems(sc, VM);
                 if (itemInventory.get(sample) == 0) {
                     System.out.println("Sold Out, Please insert coins and buy the items");
                     VendingMachine.main(null);
@@ -52,13 +59,13 @@ public class ComboMachine {
 
         }
 
-        user_input.close();
+        sc.close();
     }
 
     // insertion of coins
-    public static void inputCoins(Scanner user_input, VendingExample VM) {
+    public static void inputCoins(Scanner sc, VendingExample VM) {
         System.out.println("Insert coins in the form of: NICKEL, DIME, QUARTER and DOLLAR");
-        String coins = user_input.nextLine();
+        String coins = sc.nextLine();
         Balance = VM.drop(coins, Balance);
     }
 

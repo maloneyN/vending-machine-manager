@@ -1,5 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 //author Massimo Boffa and Nigel Maloney
-package finalproject;
+package vendingmachine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,20 +17,20 @@ class SodaMachine {
     private static Map<String, Integer> itemInventory = new HashMap<String, Integer>(); //hashmap for items and its numbers
     private static Map<String, Integer> coinInventory = new HashMap<String, Integer>(); //hashmap for coins and its numbers
     private static VendingExample VM = new VendingExample();
-
+    public int vendID = 1;
     
 
     public static void main(String args[]) {
 
         initiateInventory(); // initiate with items and coins storage in the vending machine
 
-        Scanner user_input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         while (Balance == 0) {
-            inputCoins(user_input, VM); // input coins
+            inputCoins(input, VM); // input coins
         }
 
-        String sample = selectItems(user_input, VM); // select items
+        String sample = selectItems(input, VM); // select items
         int checkVendCond = 0;
         if (!itemInventory.containsKey(sample)) { // for return and cancel case
             checkVendCond = VM.choose(sample, Balance);
@@ -35,8 +41,8 @@ class SodaMachine {
             checkVendCond = VM.choose(sample, Balance);
             if (checkVendCond == 2) {
                 System.out.println("Insert More Coins");
-                inputCoins(user_input, VM);
-                sample = selectItems(user_input, VM);
+                inputCoins(input, VM);
+                sample = selectItems(input, VM);
                 if (itemInventory.get(sample) == 0) {
                     System.out.println("Sold Out, Please insert coins and buy the items");
                     VendingMachine.main(null);
@@ -53,18 +59,18 @@ class SodaMachine {
 
         }
 
-        user_input.close();
+        input.close();
     }
 
     // insertion of coins
-    public static void inputCoins(Scanner user_input, VendingExample VM) {
+    public static void inputCoins(Scanner scan, VendingExample VM) {
         System.out.println("\nInsert coins in the form of: NICKEL, DIME, QUARTER and DOLLAR");
-        String coins = user_input.nextLine();
+        String coins = scan.nextLine();
         Balance = VM.drop(coins, Balance);
     }
 
     //selection of items
-    public static String selectItems(Scanner user_input, VendingExample VM) {
+    public static String selectItems(Scanner sc, VendingExample VM) {
         System.out.println("Your balance is " + Balance);
         System.out.println("Select Item: \n");
         System.out.println("COKE: Cola(1 dollar)");
@@ -77,7 +83,7 @@ class SodaMachine {
         System.out.println("CRUSH: Crush(1 dollar)");
         System.out.println("RETURN");
         System.out.println("CANCEL");
-        return (user_input.nextLine());
+        return (sc.nextLine());
     }
 
     //initiate coins and items storage in vending machine
@@ -88,7 +94,7 @@ class SodaMachine {
         for (Coin i : Coin.values()) {
             coinInventory.put(i.getName(), 5);
         }
-    }
+    } 
 
     public static void changeBalance(int balance) {
 

@@ -1,5 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 //author Massimo Boffa and Nigel Maloney
-package finalproject;
+package vendingmachine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,9 +36,33 @@ class VendingMachine
         if(select == 1){
         
         }else if(select == 2){
-        
+            System.out.println("What kind of Vending Machine do you want?");
+            System.out.println("1. Soda Machine");
+            System.out.println("2. Snack Machine");
+            System.out.println("3. Combo Machine");
+            System.out.print("Your choice: ");
+            int machineChoice = user_input.nextInt();
+            
+            if(machineChoice == 1){
+                
+            }
+            
         }else if(select == 3){
-            SodaMachine.main(args);
+            System.out.println("Which type of machine would you like to test?");
+            System.out.println("1. Soda Machine");
+            System.out.println("2. Snack Machine");
+            System.out.println("3. Combo Machine");
+            System.out.print("Your choice: ");
+            int machChoice = user_input.nextInt();
+            
+            if(machChoice == 1){
+                SodaMachine.main(args);   
+            }else if(machChoice == 2){
+               SnackMachine.main(args);
+            }else if(machChoice == 3){
+                ComboMachine.main(args);
+            }
+            
         } else {
             System.out.println("Wrong Input TRY AGAIN");
         }
