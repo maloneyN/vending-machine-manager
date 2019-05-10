@@ -1,3 +1,4 @@
+//author Massimo Boffa
 package finalproject;
 
 //Coin
