@@ -1,4 +1,4 @@
-//author Massimo Boffa
+//author Massimo Boffa and Nigel Maloney
 package finalproject;
 
 import java.util.HashMap;
