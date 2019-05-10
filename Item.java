@@ -1,4 +1,4 @@
-//author Massimo boffa
+//author Massimo Boffa and Nigel Maloney
 package finalproject;
 
 //Item
