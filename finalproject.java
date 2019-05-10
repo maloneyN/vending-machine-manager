@@ -1,3 +1,4 @@
+//author Massimo Boffa
 package finalproject;
 
 import java.util.HashMap;
@@ -15,14 +16,14 @@ class finalproject
 		
 		initiateInventory(); // initiate with items and coins storage in the vending machine
 
-		Scanner sc = new Scanner(System.in);
+		Scanner user_input = new Scanner(System.in);
 		System.out.println("\t\t\tVending Machine.");
 		
 		while(Balance==0){
-			inputCoins(sc,VM); // input coins
+			inputCoins(user_input,VM); // input coins
 		}
 		
-		String sample=selectItems(sc,VM); // select items
+		String sample=selectItems(user_input,VM); // select items
 		int checkVendCond=0;
 		if(!itemInventory.containsKey(sample)){ // for return and cancel case
 			checkVendCond=VM.choose(sample,Balance);
@@ -33,8 +34,8 @@ class finalproject
 	    	 checkVendCond=VM.choose(sample,Balance);
 	    	 if(checkVendCond==2){
 					System.out.println("Insert More Coins");
-					inputCoins(sc,VM); 
-			    		sample=selectItems(sc,VM);
+					inputCoins(user_input,VM); 
+			    		sample=selectItems(user_input,VM);
 			   	 	if(itemInventory.get(sample)==0){
 			   	 		System.out.println("Sold Out, Please insert coins and buy the items");
 			   	 		finalproject.main(null);
@@ -51,18 +52,18 @@ class finalproject
 	    	 
 	     }
 
-		sc.close();
+		user_input.close();
 	}
 	
 	// insertion of coins
-	public static void inputCoins(Scanner sc, VendingExample VM){
+	public static void inputCoins(Scanner user_input, VendingExample VM){
 		System.out.println("Insert coins in the form of: NICKLE, DIME, QUARTER and DOLLAR");
-		String coins = sc.nextLine();
+		String coins = user_input.nextLine();
 		Balance =VM.drop(coins,Balance);
 	}
 	
 	//selection of items
-	public static String selectItems(Scanner sc, VendingExample VM){
+	public static String selectItems(Scanner user_input, VendingExample VM){
 		System.out.println("Your balance is "+Balance);
 		System.out.println("Select Item: \n");
 		System.out.println("COKE: Cola(1 dollar)");
@@ -71,7 +72,7 @@ class finalproject
 		System.out.println("FRITOS: CHIPS(50 CENTS)");
 		System.out.println("RETURN");
 		System.out.println("CANCEL");
-		return(sc.nextLine());
+		return(user_input.nextLine());
 	}
 	
 	//initiate coins and items storage in vending machine
