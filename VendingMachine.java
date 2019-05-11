@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 //author Massimo Boffa and Nigel Maloney
 package vendingmachine;
 
@@ -34,7 +33,7 @@ class VendingMachine
         int select = user_input.nextInt();
         
         if(select == 1){
-        
+            System.out.print("No current machines. Go to second option to add new machine.");
         }else if(select == 2){
             System.out.println("What kind of Vending Machine do you want?");
             System.out.println("1. Soda Machine");
